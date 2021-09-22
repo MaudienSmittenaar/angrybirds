@@ -9,22 +9,23 @@ class Ball {
     this.c = c;
   }
 
-  class Rect {
-    constructor(x, y, w, h, c)
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.c = c;
-
-  }
 
   drawBall() {
     fill(this.c)
     ellipse(this.x, this.y, this.w, this.h);
   }
 }
-drawRect() {
+
+class Rect {
+  constructor(x, y, w, h, c) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.c = c;
+  }
+
+  drawRect() {
     fill(this.c)
     rect(this.x, this.y, this.w, this.h);
   }
@@ -50,6 +51,6 @@ function draw() {
   }
   fill("green");
   circle(a, b, 50);
-  
+
 }
 
