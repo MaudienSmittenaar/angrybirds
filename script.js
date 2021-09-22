@@ -1,5 +1,5 @@
 class Ball {
-  constructor(x, y, w, h, vx, vy, c){
+  constructor(x, y, w, h, vx, vy, c) {
     this.x = x;
     this.y = y;
     this.w = w;
@@ -9,25 +9,31 @@ class Ball {
     this.c = c;
   }
 
- drawBall() {
-   fill(this.c)
-  ellipse(this.x, this.y,this.w, this.h);
- }
+  drawBall() {
+    fill(this.c)
+    ellipse(this.x, this.y, this.w, this.h);
+  }
 }
 
 var ball1, ball2, ball3;
-  function setup() {
-   createCanvas(500, 400);
-   ball1 = new Ball(200, 200, 50, 50, 5, 5, "red")
+function setup() {
+  createCanvas(500, 400);
+  ball1 = new Ball(100, 100, 50, 50, 5, 5, "red")
 }
 
-  function draw() { 
-    //background(220);
-    ball1.drawBall();   
+function draw() {
+  background(220);
+  ball1.drawBall();
+  if (mouseIsPressed) {
+    a = mouseX;
+    b = mouseY;
+  } else {
+    a = 250;
+    b = 200;
+    
+  }
+  fill("green");
+  circle(a, b, 50);
+
 }
 
-function mousePressed() {
-  console.log(123)
-  fill("green")
-  circle(100, 100, 50);
-}
