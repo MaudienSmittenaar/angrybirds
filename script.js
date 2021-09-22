@@ -15,15 +15,10 @@ class Ball {
  }
 }
 
-
-
-
-
 var ball1, ball2, ball3;
   function setup() {
    createCanvas(500, 400);
-   ball1 = new Ball(30, 100, 50, 50, 5, 5, "red")
-
+   ball1 = new Ball(200, 200, 50, 50, 5, 5, "red")
 }
 
   function draw() { 
@@ -34,5 +29,5 @@ var ball1, ball2, ball3;
 function mousePressed() {
   console.log(123)
   fill("green")
-  circle(200, 50, 50);
+  circle(100, 100, 50);
 }
