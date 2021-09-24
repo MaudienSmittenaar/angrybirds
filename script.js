@@ -56,12 +56,12 @@ function draw() {
   circle(a, b, 25);
   
   if (keyIsDown(UP_ARROW)) {
-    lineY2 -= 3;
+    lineY2 -= 2;
      line(100, 315, lineX2, lineY2);
   }
 
   if (keyIsDown(DOWN_ARROW)) {
-    lineY2 += 3;
+    lineY2 += 2;
      line(100, 315, lineX2, lineY2);
   }
 }
