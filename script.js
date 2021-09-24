@@ -38,6 +38,9 @@ function setup() {
   rect2 = new Rect(400, 300, 60, 100, "black")
 }
 
+lineX2 = 250
+lineY2 = 315
+
 function draw() {
   background(220);
   ball1.drawBall();
@@ -45,12 +48,24 @@ function draw() {
     a = mouseX;
     b = mouseY;
   } else {
-    a = 250;
-    b = 200;
+    a = 100;
+    b = 315;
 
   }
   fill("green");
-  circle(a, b, 50);
+  circle(a, b, 25);
 
+  line(100, 315, lineX2, lineY2);
+
+  if (keyIsDown(UP_ARROW)) {
+    lineY2 -= 2;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    lineY2 -= 2;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    lineY2 += 2;
+  }
 }
-
