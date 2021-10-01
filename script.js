@@ -61,13 +61,15 @@ function draw() {
   fill("green");
   circle(a, b, 25);
   
+  line(100, 315, width, lineY2);
+
   if (keyIsDown(UP_ARROW)) {
-    lineY2 -= 2;
-     line(100, 315, lineX2, lineY2);
+    lineY2 -= 2;     
   }
 
   if (keyIsDown(DOWN_ARROW)) {
-    lineY2 += 2;
-     line(100, 315, lineX2, lineY2);
+    lineY2 += 2;     
   }
 }
+
+
