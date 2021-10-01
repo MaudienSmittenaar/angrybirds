@@ -12,6 +12,13 @@ class Ball {
   drawBall() {
     fill(this.c)
     ellipse(this.x, this.y, this.w, this.h);
+
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
+
+    //console.log(keyCode);
+
+   
   }
 }
 
@@ -33,7 +40,7 @@ class Rect {
 var ball1, rect2, rect3, rect4, rect5;
 function setup() {
   createCanvas(500, 400);
-  ball1 = new Ball(100, 100, 50, 50, 5, 5, "red")
+  ball1 = new Ball(100, 315, 50, 50, 0, 0, "green")
   rect2 = new Rect(400, 340, 60, 60, "white")
   rect3 = new Rect(400, 280, 60, 60, "white")
   rect4 = new Rect(400, 220, 60, 60, "white")
@@ -59,17 +66,28 @@ function draw() {
 
   }
   fill("green");
-  circle(a, b, 25);
-  
+
+   if (keyCode === 32) {
+      console.log("from: ", 100, 315);
+      console.log("to: ", width, lineY2);
+      ball1.vx = 2;
+      ball1.vy = -0,5;
+    }
+
   line(100, 315, width, lineY2);
+  
 
   if (keyIsDown(UP_ARROW)) {
-    lineY2 -= 2;     
+    lineY2 -= 2;
   }
 
   if (keyIsDown(DOWN_ARROW)) {
-    lineY2 += 2;     
+    lineY2 += 2;
   }
 }
 
+function keyPressed() {
+  if (keyCode === " ") {
+  }
+}
 
