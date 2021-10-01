@@ -84,6 +84,26 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)) {
     lineY2 += 2;
   }
+  if (a + 25 > rect2.x && a - 25 < rect2.x + rect2.w){
+    if(b + 25 > rect2.y && b - 25 < rect2.y + rect2.h)
+  rect2.c = "red";
+  else rect2.c = "white";
+}
+if (a + 25 > rect3.x && a - 25 < rect3.x + rect3.w){
+    if(b + 25 > rect3.y && b - 25 < rect3.y + rect3.h)
+  rect3.c = "red";
+  else rect3.c = "white";
+}
+if (a + 25 > rect4.x && a - 25 < rect4.x + rect4.w){
+    if(b + 25 > rect4.y && b - 25 < rect4.y + rect4.h)
+  rect4.c = "red";
+  else rect4.c = "white";
+}
+if (a + 25 > rect5.x && a - 25 < rect5.x + rect5.w){
+    if(b + 25 > rect5.y && b - 25 < rect5.y + rect5.h)
+  rect5.c = "red";
+  else rect5.c = "white";
+}
 }
 
 function keyPressed() {
