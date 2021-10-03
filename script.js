@@ -15,10 +15,6 @@ class Ball {
 
     this.x = this.x + this.vx;
     this.y = this.y + this.vy;
-
-    //console.log(keyCode);
-
-   
   }
 }
 
@@ -67,15 +63,14 @@ function draw() {
   }
   fill("green");
 
-   if (keyCode === 32) {
-      console.log("from: ", 100, 315);
-      console.log("to: ", width, lineY2);
-      ball1.vx = 2;
-      ball1.vy = -0,5;
-    }
+line(100, 315, width, lineY2);
 
-  line(100, 315, width, lineY2);
-  
+  if (keyCode === 32) {
+    console.log("from: ", 100, 315);
+    console.log("to: ", width, mouseY);
+    ball1.vx = 2;
+    ball1.vy = 2;
+  }
 
   if (keyIsDown(UP_ARROW)) {
     lineY2 -= 2;
@@ -84,30 +79,27 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)) {
     lineY2 += 2;
   }
-  if (a + 25 > rect2.x && a - 25 < rect2.x + rect2.w){
-    if(b + 25 > rect2.y && b - 25 < rect2.y + rect2.h)
-  rect2.c = "red";
-  else rect2.c = "white";
-}
-if (a + 25 > rect3.x && a - 25 < rect3.x + rect3.w){
-    if(b + 25 > rect3.y && b - 25 < rect3.y + rect3.h)
-  rect3.c = "red";
-  else rect3.c = "white";
-}
-if (a + 25 > rect4.x && a - 25 < rect4.x + rect4.w){
-    if(b + 25 > rect4.y && b - 25 < rect4.y + rect4.h)
-  rect4.c = "red";
-  else rect4.c = "white";
-}
-if (a + 25 > rect5.x && a - 25 < rect5.x + rect5.w){
-    if(b + 25 > rect5.y && b - 25 < rect5.y + rect5.h)
-  rect5.c = "red";
-  else rect5.c = "white";
-}
-}
 
-function keyPressed() {
-  if (keyCode === " ") {
+  if (a + 25 > rect2.x && a - 25 < rect2.x + rect2.w) {
+    if (b + 25 > rect2.y && b - 25 < rect2.y + rect2.h)
+      rect2.c = "red";
+    else rect2.c = "white";
+  }
+  if (a + 25 > rect3.x && a - 25 < rect3.x + rect3.w) {
+    if (b + 25 > rect3.y && b - 25 < rect3.y + rect3.h)
+      rect3.c = "red";
+    else rect3.c = "white";
+  }
+  if (a + 25 > rect4.x && a - 25 < rect4.x + rect4.w) {
+    if (b + 25 > rect4.y && b - 25 < rect4.y + rect4.h)
+      rect4.c = "red";
+    else rect4.c = "white";
+  }
+
+  if (a + 25 > rect5.x && a - 25 < rect5.x + rect5.w) {
+    if (b + 25 > rect5.y && b - 25 < rect5.y + rect5.h)
+      rect5.c = "red";
+    else rect5.c = "white";
   }
 }
 
