@@ -66,10 +66,11 @@ function draw() {
 line(100, 315, width, lineY2);
 
   if (keyCode === 32) {
-    console.log("from: ", 100, 315);
-    console.log("to: ", width, mouseY);
-    ball1.vx = 2;
-    ball1.vy = 2;
+    ball1.vx = 5;
+    frames = (width - 100) / ball1.vx;
+    // console.log(frames, lineY2);
+    // console.log(315 - lineY2)
+    ball1.vy = ((315 - lineY2) / frames) * -1;
   }
 
   if (keyIsDown(UP_ARROW)) {
