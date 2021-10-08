@@ -36,11 +36,11 @@ class Rect {
     if (ball1.y - ball1.h > this.y - this.h && ball1.y - ball1.h < this.y) {
       if (ball1.x > this.x && ball1.x < this.x + this.w) {
         this.c = "red";
-        song.play();
+        boemSound.play();
         ball1 = new Ball(100, 315, 50, 50, 0, 0, "green");
       }
       else {
-        song.stop();
+        boemSound.stop();
       }
     }
   }
@@ -48,6 +48,11 @@ class Rect {
 
 var ball1, rect2, rect3, rect4, rect5;
 var rects = [];
+
+var boemSound;
+function preLoad() {
+  boemSound = loadSound('Users/maudiensmittenaar/Downloads/LV2ARRM-hand-clap-3.mp3');
+}
 
 function setup() {
   createCanvas(500, 400);
@@ -61,8 +66,6 @@ function setup() {
   rects.push(rect3);
   rects.push(rect4);
   rects.push(rect5);
-
-  song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
 }
 
 lineX2 = 250
