@@ -36,17 +36,15 @@ class Rect {
     if (ball1.y - ball1.h > this.y - this.h && ball1.y - ball1.h < this.y) {
       if (ball1.x > this.x && ball1.x < this.x + this.w) {
         this.c = "red";
-      }
-
-    }
-    else {
-      this.c = "white";
+        ball1 = new Ball(100, 315, 50, 50, 0, 0, "green");
+      }    
     }
   }
 }
 
 var ball1, rect2, rect3, rect4, rect5;
 var rects = [];
+
 function setup() {
   createCanvas(500, 400);
   ball1 = new Ball(100, 315, 50, 50, 0, 0, "green")
@@ -67,6 +65,7 @@ lineY2 = 315
 
 function draw() {
   background(220);
+
   ball1.drawBall();
 
   rects.forEach((r) => {
@@ -81,13 +80,13 @@ function draw() {
   } else {
     a = 100;
     b = 315;
-
   }
+
   fill("green");
 
   line(100, 315, width, lineY2);
 
-  if (keyCode === 32) {
+  if (keyIsDown(32)) {
     ball1.vx = 5;
     frames = (width - 100) / ball1.vx;
     ball1.vy = ((315 - lineY2) / frames) * -1;
