@@ -32,12 +32,15 @@ class Rect {
     rect(this.x, this.y, this.w, this.h);
   }
 
-  checkCollision(){
-    if(ball1.x < this.x && ball1.y > this.y){
-      this.c = "white";
+  checkCollision() {
+    if (ball1.y - ball1.h > this.y - this.h && ball1.y - ball1.h < this.y) {
+      if (ball1.x > this.x && ball1.x < this.x + this.w) {
+        this.c = "red";
+      }
+
     }
-    else{
-      this.c = "red";
+    else {
+      this.c = "white";
     }
   }
 }
@@ -65,8 +68,8 @@ lineY2 = 315
 function draw() {
   background(220);
   ball1.drawBall();
-  
-  rects.forEach((r) =>{
+
+  rects.forEach((r) => {
     r.drawRect();
     // checkcollision
     r.checkCollision()
@@ -82,7 +85,7 @@ function draw() {
   }
   fill("green");
 
-line(100, 315, width, lineY2);
+  line(100, 315, width, lineY2);
 
   if (keyCode === 32) {
     ball1.vx = 5;
@@ -96,6 +99,7 @@ line(100, 315, width, lineY2);
 
   if (keyIsDown(DOWN_ARROW)) {
     lineY2 += 2;
-  } 
+  }
+
 }
 
