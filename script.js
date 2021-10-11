@@ -57,14 +57,17 @@ function setup() {
   rects.push(rect3);
   rects.push(rect4);
   rects.push(rect5);
+}
 
+function preload() {
+  img1 = loadImage('achtergrond.jpg');
 }
 
 lineX2 = 250
 lineY2 = 315
 
 function draw() {
-  background(220);
+  background(img1);
 
   ball1.drawBall();
 
