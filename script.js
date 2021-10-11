@@ -37,8 +37,8 @@ class Rect {
       if (ball1.x > this.x && ball1.x < this.x + this.w) {
         this.c = "red";
         ball1 = new Ball(100, 315, 50, 50, 0, 0, "green");
-        score ++;
-        if(score == rects.length){
+        score++;
+        if (score == rects.length) {
           gameState = 2;
         }
       }
@@ -53,7 +53,7 @@ var gameState = 0;
 var score = 0;
 
 function setup() {
-  createCanvas(500, 400);  
+  createCanvas(500, 400);
 
   ball1 = new Ball(100, 315, 50, 50, 0, 0, "green")
   rect2 = new Rect(400, 340, 60, 60, "white");
@@ -67,7 +67,7 @@ function setup() {
   rects.push(rect5);
 }
 
-function game() {  
+function game() {
   background(img1);
 
   rects.forEach((r) => {
@@ -76,7 +76,7 @@ function game() {
     r.checkCollision()
   });
 
-  
+
   ball1.drawBall();
 
   if (mouseIsPressed) {
@@ -91,7 +91,7 @@ function game() {
 
   line(100, 315, width, lineY2);
 
-  if (keyIsDown(32)) {    
+  if (keyIsDown(32)) {
     ball1.vx = 5;
     frames = (width - 100) / ball1.vx;
     ball1.vy = ((315 - lineY2) / frames) * -1;
@@ -108,6 +108,7 @@ function game() {
 
 function menu() {
   background("#FFCCFF");
+  textSize(25);
   text("Menu", 25, 45);
   text('1. Menu', 25, 65);
   text('2. Start game', 25, 85);
@@ -121,7 +122,8 @@ function preload() {
 
 function gameOver() {
   background(img1);
-  text('Game over!', 25, 45);  
+  textSize(70);
+  text('Game over!', 75, 200);
 }
 
 lineX2 = 250
