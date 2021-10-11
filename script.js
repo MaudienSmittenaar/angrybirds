@@ -37,7 +37,7 @@ class Rect {
       if (ball1.x > this.x && ball1.x < this.x + this.w) {
         this.c = "red";
         ball1 = new Ball(100, 315, 50, 50, 0, 0, "green");
-      }    
+      }
     }
   }
 }
@@ -45,8 +45,11 @@ class Rect {
 var ball1, rect2, rect3, rect4, rect5;
 var rects = [];
 
+var gameState = 0;
+
 function setup() {
-  createCanvas(500, 400);
+  createCanvas(500, 400);  
+
   ball1 = new Ball(100, 315, 50, 50, 0, 0, "green")
   rect2 = new Rect(400, 340, 60, 60, "white");
   rect3 = new Rect(400, 280, 60, 60, "white");
@@ -59,23 +62,17 @@ function setup() {
   rects.push(rect5);
 }
 
-function preload() {
-  img1 = loadImage('achtergrond.jpg');
-}
-
-lineX2 = 250
-lineY2 = 315
-
-function draw() {
+function game() {  
   background(img1);
-
-  ball1.drawBall();
 
   rects.forEach((r) => {
     r.drawRect();
     // checkcollision
     r.checkCollision()
   });
+
+  
+  ball1.drawBall();
 
   if (mouseIsPressed) {
     a = mouseX;
@@ -89,7 +86,7 @@ function draw() {
 
   line(100, 315, width, lineY2);
 
-  if (keyIsDown(32)) {
+  if (keyIsDown(32)) {    
     ball1.vx = 5;
     frames = (width - 100) / ball1.vx;
     ball1.vy = ((315 - lineY2) / frames) * -1;
@@ -102,6 +99,57 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)) {
     lineY2 += 2;
   }
+}
 
+function menu() {
+  background("#ababab");
+  text("Menu", 25, 45);
+  text('1. Menu', 25, 65);
+  text('2. Start game', 25, 85);
+  text('3. Game over', 25, 105);
+
+}
+
+function preload() {
+  img1 = loadImage('achtergrond.jpg');
+}
+
+function gameOver() {
+  background(img1);
+  text('Game over!', 25, 45);
+
+  //rect2.c = "red" && rect3.c = "red" && rect4.c = "red" && rect5.c = "red"
+}
+
+lineX2 = 250
+lineY2 = 315
+
+function draw() {
+
+  if (gameState == 0) {
+    menu();
+  }
+
+  else if (gameState == 1) {
+    game();
+  }
+
+  else if (gameState == 2) {
+    gameOver();
+  }
+}
+
+function keyPressed() {
+  if (keyCode == 49) {
+    gameState = 0;
+  }
+
+  if (keyCode == 50) {
+    gameState = 1;
+  }
+
+  if (keyCode == 51) {
+    gameState = 2;
+  }
 }
 
