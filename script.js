@@ -37,6 +37,10 @@ class Rect {
       if (ball1.x > this.x && ball1.x < this.x + this.w) {
         this.c = "red";
         ball1 = new Ball(100, 315, 50, 50, 0, 0, "green");
+        score ++;
+        if(score == rects.length){
+          gameState = 2;
+        }
       }
     }
   }
@@ -46,6 +50,7 @@ var ball1, rect2, rect3, rect4, rect5;
 var rects = [];
 
 var gameState = 0;
+var score = 0;
 
 function setup() {
   createCanvas(500, 400);  
@@ -116,11 +121,7 @@ function preload() {
 
 function gameOver() {
   background(img1);
-  text('Game over!', 25, 45);
-  rect2.c = "red";  
-  rect3.c = "red"; 
-  rect4.c = "red";
-  rect5.c = "red";
+  text('Game over!', 25, 45);  
 }
 
 lineX2 = 250
