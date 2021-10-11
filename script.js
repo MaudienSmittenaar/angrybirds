@@ -102,7 +102,7 @@ function game() {
 }
 
 function menu() {
-  background("#ababab");
+  background("#FFCCFF");
   text("Menu", 25, 45);
   text('1. Menu', 25, 65);
   text('2. Start game', 25, 85);
@@ -117,8 +117,10 @@ function preload() {
 function gameOver() {
   background(img1);
   text('Game over!', 25, 45);
-
-  //rect2.c = "red" && rect3.c = "red" && rect4.c = "red" && rect5.c = "red"
+  rect2.c = "red";  
+  rect3.c = "red"; 
+  rect4.c = "red";
+  rect5.c = "red";
 }
 
 lineX2 = 250
